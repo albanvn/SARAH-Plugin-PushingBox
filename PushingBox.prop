@@ -1,0 +1,17 @@
+{
+  "modules": { 
+    "PushingBox": {
+      "description": "Plugin pour le service PushingBox.com",
+      "version": "1.0",
+      "auteur": "Sailman 83",
+      "ID_Utilisateur_1": "",
+      "Nom_Utilisateur_1": "Benoit",
+      "ID_Utilisateur_2": "",
+      "Nom_Utilisateur_2": "",	  
+      "ID_Utilisateur_3": "",
+      "Nom_Utilisateur_3": "",	  
+      "ID_Utilisateur_4": "",
+      "Nom_Utilisateur_4": ""	  
+      }
+  }
+}

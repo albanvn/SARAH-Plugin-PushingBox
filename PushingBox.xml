@@ -1,0 +1,18 @@
+<grammar version="1.0" xml:lang="fr-FR" mode="voice" root="rulepushingbox" xmlns="http://www.w3.org/2001/06/grammar" tag-format="semantics/1.0">
+  <rule id="rulepushingbox" scope="public">
+    <example>Sarah, dis a Franck de chercher du pain!</example>
+    <tag>out.action=new Object(); </tag>	
+	<tag>out.action._attributes.dictation="false";</tag>
+    <item weight="2">Sarah</item>
+    <one-of>
+      <item>Dis a Benoit<tag>out.action.qui="Benoit"</tag><tag>out.action.titre="Message de SARAH:"</tag></item>	  
+      <item>Dis a Gille<tag>out.action.qui="Gille"</tag><tag>out.action.titre="Message de SARAH:"</tag></item>
+	  <item>Dis a Marc<tag>out.action.qui="Marc"</tag><tag>out.action.titre="Message de SARAH:"</tag></item>
+	  <item>Dis a Thomas<tag>out.action.qui="Thomas"</tag><tag>out.action.titre="Message de SARAH:"</tag></item>
+    </one-of>  	
+	<tag>out.action._attributes.dictation="true";</tag>
+	<tag>out.action._attributes.message="";</tag>
+	<ruleref special="GARBAGE" />
+	<tag>out.action._attributes.uri="http://127.0.0.1:8080/sarah/PushingBox";</tag>
+  </rule>
+</grammar>

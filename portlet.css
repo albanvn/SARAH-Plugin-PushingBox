@@ -1,0 +1,10 @@
+
+.plugin-gridster.PushingBox .front {
+  background: url('images/face.png') center 34px;
+  background-size:   135px 87px;
+  background-repeat: no-repeat;
+}
+
+.plugin-gridster.PushingBox .back {
+ background-size: cover;
+}

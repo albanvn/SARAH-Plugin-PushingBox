@@ -1,0 +1,107 @@
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        jQuery("#plugin-menu .plugin-nav a").click(function () {
+            jQuery("#plugin-menu .content > ul").hide();
+            jQuery("#plugin-menu .plugin-nav ul li").removeClass("active");
+            jQuery(this).parent().addClass("active");
+            jQuery("#" + jQuery(this).data("toggle")).show();
+            return false;
+        });
+    });
+</script>
+<p class="page-header">
+	<b>Version 1.0</b></br></br>
+	<span class="lead">Utilisation du service PushingBox</span><br/></br>
+	<span>Le systeme liste un flux en entrée pour l'envoyer au service</span><br/></br>
+</p>
+
+<div id="plugin-menu" class="row">
+    <!--Navigation-->
+    <div class="stretch col-md-3 well plugin-nav">
+        <ul class="nav nav-list">
+            <li class="nav-header">Documentation</li>
+            <li><a href="#" data-toggle="plugin-principe">Le Principe</a></li>
+            <li><a href="#" data-toggle="plugin-HTTP">La requète via URL</a></li>
+			<li><a href="#" data-toggle="plugin-retour">Retour de la fonction</a></li>
+            <li><a href="#" data-toggle="plugin-examples">Exemples</a></li>
+		    <li><a href="#" data-toggle="plugin-pushingBox">Tutorial PushingBox</a></li>
+            <li><a href="#" data-toggle="plugin-infos">Infos</a></li>
+        </ul>
+    </div>
+    <!--Content-->
+    <div class="col-md-9 content">
+       <!--Versions-->
+        <ul class="unstyled" id="plugin-version" >
+			<div class="alert alert-success">Versions</div>
+			<li>Version 1.0:</li>
+			 [X] Version de base</br>
+        </ul>
+
+
+       <!--Principe-->
+        <ul class="unstyled" id="plugin-principe" style="display: none;">
+			<div class="alert alert-success">Le principe</div>
+			<li><i class="icon-play-circle"></i><strong> Plugin autonome ou appelé</strong></br>
+			&nbsp;&nbsp;&nbsp;- Le plugin permet de rendre la fonction accessible de "l'extérieur". Voir "La requète via URL"</br>
+			&nbsp;&nbsp;&nbsp;- Le plugin peux etre utilisé de façon classique grace au XML</br>
+			</li>
+        </ul>
+      
+		<ul class="unstyled" id="plugin-propriete" style="display: none;">
+			<div class="alert alert-success">Les propriétés</div>			
+        </ul>
+
+		<!--HTTP-->
+        <ul class="unstyled" id="plugin-HTTP" style="display: none;">
+            <div class="alert alert-success">La requète URL</div>
+			<li><i class="icon-play-circle"></i><strong> Les éléments pour l'appel de la fonction:</strong></br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- qui : Nom du destinataire du PUSH, doit exister dans la liste definie par les proprieté du plugins</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- titre : Le titre du PUSH</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- message : Le contenu du PUSH</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- http://IP_DU_NODEJS/sarah/PushingBox?qui=XXX&titre=XXX&message=XX</br></br>			
+			</li>
+		</ul>	
+		<ul class="unstyled" id="plugin-retour" style="display: none;">
+			<div class="alert alert-success">La structure de JSON:</div>
+			<li><i class="icon-play-circle"></i><strong> La structure de retour en JSON:</strong></br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>{</strong></br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"<strong>code</strong>" : "HTTP CODE",</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"<strong>message</strong>" : "MESSAGE LIEE au code du statut HTTP"</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"<strong>signification</strong>" : "Signification, explication du message, </br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"<strong>tts</strong>" : "Phrase vocalisé par SARAH"</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></br></br>
+			</li></br>
+        </ul>
+
+		<!--Exemples 1-->
+        <ul class="unstyled" id="plugin-examples" style="display: none;">
+            <div class="alert alert-success">Exemple n°1 : XML</div>
+			<li> '< item >' Dis a Thomas '< tag >'out.action.qui='Thomas''< /tag >< tag >out.action.titre='Message de SARAH:'< /tag >' < /item >
+			</li>
+			<li><i class="icon-play-circle"></i> <strong>La requète URL:</strong></li>
+			http://IP_DU_NODEJS/sarah/PushingBox?qui=Thomas&titre=Message+de+SARAH:&message=dictation
+			</br></br>
+		</ul>
+		
+		<ul class="unstyled" id="plugin-pushingBox" style="display: none;">
+			<div class="alert alert-success">Tutorial pour PushingBox.com</div>
+			  1 - https://www.pushingbox.com/index.php</br>
+			  2 - Active le compte grace a un compte Google</br>
+			  3 - Ajouter un service suivant votre peripherique. iOS, Android, WindowsPhone ... https://www.pushingbox.com/services.php</br>
+			  4 - Creer un scenario </br>
+			      &nbsp;- Remplire le nom du scenario. Par exemple" Plugin PushingBox"</br>
+			      &nbsp;- Recupere le "DeviceID" pour le plugin</br>
+			      &nbsp;- Puis "Add in action"</br>
+			      &nbsp;- Selectionner le peripherique d'affichage du push</br>
+			      &nbsp;- Dans le POP-UP le "Title" mettre : $titre$</br>
+			      &nbsp;- Dans "Message" mettre  : $msg$</br>
+			  5 - Dans les proprietes du plugin copier votre DeviceID</br>
+			  Fini</br>
+        </ul>       
+	   <!--Infos-->
+        <ul class="unstyled" id="plugin-infos" style="display: none;">
+            <div class="alert alert-success">Infos</div>
+			<li><i class="icon-play-circle"></i>Une idée d'amelioration ? Contactez-moi sur GOOGLE+</li></br>
+        </ul> 
+    </div>
+</div>
